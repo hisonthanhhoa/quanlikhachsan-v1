@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 16, 2018 at 12:30 PM
--- Server version: 10.1.29-MariaDB
--- PHP Version: 7.2.0
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th3 21, 2021 lúc 06:53 PM
+-- Phiên bản máy phục vụ: 10.3.16-MariaDB
+-- Phiên bản PHP: 7.3.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `phongtro`
+-- Cơ sở dữ liệu: `phongtro`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `nguoithue`
+-- Cấu trúc bảng cho bảng `nguoithue`
 --
 
 CREATE TABLE `nguoithue` (
@@ -43,21 +43,34 @@ CREATE TABLE `nguoithue` (
   `debt` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `nguoithue`
+-- Cấu trúc bảng cho bảng `nhanvien`
 --
 
-INSERT INTO `nguoithue` (`mathue`, `tennguoithue`, `cmnd`, `dob`, `quequan`, `sodienthoai`, `sex`, `ngaythue`, `sophong`, `nguoithuecung`, `dichvu`, `debt`) VALUES
-(1, 'Trần Minh Hoà', 23524165, '1997-09-19', 'Hàn Quốc', 1262852081, 0, '2018-05-07', 1, '[{\"name\":\"Phan Duy Cường\",\"cmnd\":\"025434176\",\"dob\":\"1997-02-24\",\"quequan\":\"Bến Tre\",\"sodienthoai\":\"0902357290\",\"sex\":\"1\"}]', '[{\"tenDv\":\"Internet cáp quang\",\"Price\":\"220000\"},{\"tenDv\":\"Truyền hình cáp\",\"Price\":\"50000\"},{\"tenDv\":\"Khác(rác,gửi xe,..)\",\"Price\":\"30000\"}]', '[{\"date\":\"3\\/2018\",\"dv1\":\"220000\",\"dv2\":\"50000\",\"dv3\":\"30000\",\"giaphong\":\"1100000\",\"dien\":\"50000\",\"nuoc\":\"50000\",\"khauhao\":\"0\",\"tongtien\":\"1500000\"}]'),
-(2, 'Be Dieu', 25434176, '1997-02-02', 'Sài Gòn', 1262852082, 1, '1994-05-05', 2, '[{\"name\":\"Be Ngok\",\"cmnd\":\"025431526\",\"dob\":\"1996-01-08\",\"quequan\":\"Kiên Giang\",\"sodienthoai\":\"0903274542\",\"sex\":\"1\"},{\"name\":\"Be Banh\",\"cmnd\":\"025434321\",\"dob\":\"1995-07-09\",\"quequan\":\"Kiên Giang\",\"sodienthoai\":\"0903474542\",\"sex\":\"1\"}]', '[{\"tenDv\":\"Internet cáp quang\",\"Price\":\"220000\"},{\"tenDv\":\"Truyền hình cáp\",\"Price\":\"50000\"},{\"tenDv\":\"Khác(rác,gửi xe,..)\",\"Price\":45000}]', ''),
-(9, 'CocaCola', 25434156, '1997-12-01', 'Tiền Giang', 1262852084, 1, '2018-05-04', 3, '[{\"name\":\"Pesi Dr Thanh\",\"cmnd\":\"02354125\",\"dob\":\"1997-08-07\",\"quequan\":\"Huế\",\"sodienthoai\":\"0903234521\",\"sex\":\"1\"}]', '[{\"tenDv\":\"Internet cáp quang\",\"Price\":\"220000\"}]', '[]'),
-(11, 'Doraemon', 123456789, '1997-04-04', 'Nhật Bản', 1262852085, 1, '2018-05-04', 11, '[]', '[]', '[]'),
-(13, 'Trần Thị Mẹ', 25341357, '1987-04-05', 'Hà Nội', 1262852087, 1, '2018-05-17', 5, '[]', '[{\"tenDv\":\"Truyền hình cáp\",\"Price\":\"50000\"},{\"tenDv\":\"Khác(rác,gửi xe,..)\",\"Price\":\"850000\"}]', '[{\"date\":\"3\\/2018\",\"dv1\":\"220000\",\"dv2\":\"50000\",\"dv3\":\"30000\",\"giaphong\":\"1100000\",\"dien\":\"50000\",\"nuoc\":\"50000\",\"khauhao\":\"0\",\"tongtien\":\"1500000\"}]');
+CREATE TABLE `nhanvien` (
+  `id` int(11) NOT NULL,
+  `ten` varchar(255) NOT NULL,
+  `chucvu` varchar(255) NOT NULL,
+  `luong` int(11) NOT NULL,
+  `sodienthoai` varchar(255) NOT NULL,
+  `tendangnhap` varchar(255) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `gioitinh` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `nhanvien`
+--
+
+INSERT INTO `nhanvien` (`id`, `ten`, `chucvu`, `luong`, `sodienthoai`, `tendangnhap`, `pass`, `gioitinh`) VALUES
+(1, '12321', '123', 123, '1231', '123', '123', '13');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phong`
+-- Cấu trúc bảng cho bảng `phong`
 --
 
 CREATE TABLE `phong` (
@@ -67,26 +80,10 @@ CREATE TABLE `phong` (
   `mota` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `phong`
---
-
-INSERT INTO `phong` (`sophong`, `giaphong`, `trangthai`, `mota`) VALUES
-(1, 1100000, 1, 'Phòng nhỏ gọn thích hợp cho các cặp tình nhân'),
-(2, 1500000, 1, 'Phòng 50m2 , 1 gác nhỏ , 1 tolet riêng , phù hơp sống 2 người '),
-(3, 1500000, 1, 'Phòng 50m2 , 1 gác nhỏ , 1 tolet riêng , phù hơp sống 2 người '),
-(4, 2000000, 0, 'Phòng 50m2 , 1 gác nhỏ , 1 tolet riêng , phù hơp sống 2 người '),
-(5, 3000000, 1, 'Phòng 150m2 , 1 gác nhỏ , 2 tolet riêng , phù hơp sống 3 người '),
-(6, 1000000, 0, 'Phòng 30m2 , 1 tolet riêng , phù hơp sống 1 người '),
-(8, 800000, 0, 'Phòng 28m2 , 1 toilet riêng , thích hợp cho sinh viên ở thích ở một mình '),
-(9, 850000, 0, 'Phòng 28m2 , 1 toilet riêng , thích hợp cho sinh viên ở thích ở một mình '),
-(10, 1000000, 0, 'Phòng 30m2 , 1 tolet riêng , phù hơp sống 1 người'),
-(11, 900000, 1, 'Phòng giá rẻ cho sinh viên');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
@@ -97,53 +94,65 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
 (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `nguoithue`
+-- Chỉ mục cho bảng `nguoithue`
 --
 ALTER TABLE `nguoithue`
   ADD PRIMARY KEY (`mathue`),
   ADD UNIQUE KEY `sophong` (`sophong`);
 
 --
--- Indexes for table `phong`
+-- Chỉ mục cho bảng `nhanvien`
+--
+ALTER TABLE `nhanvien`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `phong`
 --
 ALTER TABLE `phong`
   ADD PRIMARY KEY (`sophong`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `nguoithue`
+-- AUTO_INCREMENT cho bảng `nguoithue`
 --
 ALTER TABLE `nguoithue`
   MODIFY `mathue` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT for table `phong`
+-- AUTO_INCREMENT cho bảng `nhanvien`
 --
-ALTER TABLE `phong`
-  MODIFY `sophong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `nhanvien`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT cho bảng `phong`
+--
+ALTER TABLE `phong`
+  MODIFY `sophong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;

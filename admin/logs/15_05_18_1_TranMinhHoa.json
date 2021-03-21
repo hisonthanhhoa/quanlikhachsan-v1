@@ -1,0 +1,48 @@
+{
+    "mathue": 1,
+    "tennguoithue": "Trần Minh Hoà",
+    "cmnd": 23524165,
+    "dob": "1997-09-19",
+    "quequan": "Hàn Quốc",
+    "sodienthoai": 1262852081,
+    "sex": 0,
+    "ngaythue": "2018-05-07",
+    "sophong": 1,
+    "nguoithuecung": [
+        {
+            "name": "Phan Duy Cường",
+            "cmnd": "025434176",
+            "dob": "1997-02-24",
+            "quequan": "Bến Tre",
+            "sodienthoai": "0902357290",
+            "sex": "1"
+        }
+    ],
+    "dichvu": [
+        {
+            "tenDv": "Internet cáp quang",
+            "Price": "220000"
+        },
+        {
+            "tenDv": "Truyền hình cáp",
+            "Price": "50000"
+        },
+        {
+            "tenDv": "Khác(rác,gửi xe,..)",
+            "Price": "30000"
+        }
+    ],
+    "debt": [
+        {
+            "date": "3\/2018",
+            "dv1": "220000",
+            "dv2": "50000",
+            "dv3": "30000",
+            "giaphong": "1100000",
+            "dien": "50000",
+            "nuoc": "50000",
+            "khauhao": "0",
+            "tongtien": "1500000"
+        }
+    ]
+}

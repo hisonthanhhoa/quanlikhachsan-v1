@@ -1,0 +1,28 @@
+{
+    "mathue": 9,
+    "tennguoithue": "CocaCola",
+    "cmnd": 25434156,
+    "dob": "1997-12-01",
+    "quequan": "Tiền Giang",
+    "sodienthoai": 1262852084,
+    "sex": 1,
+    "ngaythue": "2018-05-04",
+    "sophong": 3,
+    "nguoithuecung": [
+        {
+            "name": "Pesi Dr Thanh",
+            "cmnd": "02354125",
+            "dob": "1997-08-07",
+            "quequan": "Huế",
+            "sodienthoai": "0903234521",
+            "sex": "1"
+        }
+    ],
+    "dichvu": [
+        {
+            "tenDv": "Internet cáp quang",
+            "Price": "220000"
+        }
+    ],
+    "debt": []
+}

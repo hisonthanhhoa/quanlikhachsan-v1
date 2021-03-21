@@ -1,0 +1,23 @@
+{
+    "mathue": 4,
+    "tennguoithue": "Bánh Su",
+    "cmnd": 25434156,
+    "dob": "1975-12-02",
+    "quequan": "Long An",
+    "sodienthoai": 1262852083,
+    "sex": 0,
+    "ngaythue": "2018-05-05",
+    "sophong": 8,
+    "nguoithuecung": [],
+    "dichvu": [
+        {
+            "tenDv": "Internet cáp quang",
+            "Price": "220000"
+        },
+        {
+            "tenDv": "Khác(rác,gửi xe,..)",
+            "Price": "50000"
+        }
+    ],
+    "debt": []
+}

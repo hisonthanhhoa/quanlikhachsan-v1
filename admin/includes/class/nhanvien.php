@@ -1,0 +1,57 @@
+<?php
+
+/**
+ * Class quan li nhan vien
+ */
+class nhanvien
+{
+	public $infoUser = array();
+	public $ten;
+	public $chucvu;
+	public $luong;
+	public $sodienthoai;
+	public $tendangnhap;
+	public $pass;
+	public $gioitinh;
+
+
+	// khoi tao array thong tin nhan vien
+	function creatInfoUser($ten, $chucvu, $luong, $sodienthoai, $tendangnhap, $pass, $gioitinh)
+	{
+		$arr = array("ten" => $ten, "chucvu" => $chucvu, "luong" => $luong, "sodienthoai" => $sodienthoai, "tendangnhap" => $tendangnhap, "pass" => $pass, "gioitinh" => $gioitinh);
+		return $arr;
+	}
+
+	function khoitaoUser($infoUser, $ten, $chucvu, $luong, $sodienthoai, $tendangnhap, $pass, $gioitinh)
+	{
+		$this->infoUser = $infoUser;
+		$this->$ten = $ten;
+		$this->$chucvu = $chucvu;
+		$this->$luong = $luong;
+		$this->$sodienthoai = $sodienthoai;
+		$this->$tendangnhap = $tendangnhap;
+		$this->$pass = $pass;
+		$this->$gioitinh = $gioitinh;
+	}
+
+
+
+	//Insert doi tuong vao DB
+	function insertDB($con)
+	{
+		// chuan bi du lieu insert
+		$ten = $this->infoUser['ten'];
+		$chucvu = $this->infoUser['chucvu'];
+		$luong = $this->infoUser['luong'];
+		$sodienthoai = $this->infoUser['sodienthoai'];
+		$tendangnhap = $this->infoUser['tendangnhap'];
+		$pass = $this->infoUser['pass'];
+		$gioitinh = $this->infoUser['gioitinh'];
+
+		// tien hanh insert
+		$query = "INSERT INTO `nhanvien`(`ten`, `chucvu`, `luong`, `sodienthoai`, `tendangnhap`, `pass`, `gioitinh`) VALUES (?,?,?,?,?,?,?)";
+		$stmt = mysqli_prepare($con, $query);
+		$stmt->bind_param("ssissss", $ten, $chucvu, $luong, $sodienthoai, $tendangnhap, $pass, $gioitinh);
+		$stmt->execute();
+	}
+}

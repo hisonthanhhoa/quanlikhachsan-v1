@@ -71,7 +71,11 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
                         <h3 class="menu-title">thông tin tài khoản</h3><!-- /.menu-title -->
 
                         <li class="menu-item-has-children dropdown">
-                            <a style="font-family: 'Roboto Condensed', sans-serif;" href="../user/userlist.php" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Tài Khoản</a>
+                            <a style="font-family: 'Roboto Condensed', sans-serif;" href="../user/userlist.php" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i> Tạo Tài Khoản</a>
+                        </li>
+                        
+                        <li class="menu-item-has-children dropdown">
+                            <a style="font-family: 'Roboto Condensed', sans-serif;" href="../user/userlist.php" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i> Danh Sách Nhân Viên</a>
                         </li>
 
                     </ul>
@@ -185,7 +189,10 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
                 <div class="form-group row">
                     <label class="col-sm-2 form-control-label">giới tính</label>
                     <div class="col-sm-10">
-                        <textarea name="gioitinh" id="gioitinh" class="form-control" rows="3" required="required"></textarea>
+                        <select name="gioitinh">
+                            <option value="0">Nữ</option>
+                            <option value="1">Nam</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">

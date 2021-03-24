@@ -54,4 +54,22 @@ class nhanvien
 		$stmt->bind_param("ssissss", $ten, $chucvu, $luong, $sodienthoai, $tendangnhap, $pass, $gioitinh);
 		$stmt->execute();
 	}
+
+	function getAllNhanVien($con){
+		$arrData = array();
+		$query = "Select * From nhanvien";
+		$result = mysqli_query($con,$query);
+		while($row=mysqli_fetch_assoc($result)){
+			$id = $row['id'];
+			$ten = $row['ten'];
+			$chucvu = $row['chucvu'];
+			$luong = $row['luong'];
+			$sodienthoai = $row['sodienthoai'];
+			$taikhoan = $row['tendangnhap'];
+			$gioitinh = $row['gioitinh'];
+			$arrTmp = array("id"=>$id,"ten"=>$ten,"chucvu"=>$chucvu,"luong"=>$luong, "sodienthoai"=>$sodienthoai, "taikhoan"=>$taikhoan, "gioitinh"=>$gioitinh);
+			array_push($arrData,$arrTmp);
+		}
+		return $arrData;
+	}
 }

@@ -64,9 +64,11 @@ if(isset($_SESSION['username']) && $_SESSION['username']=="admin"){
 
 
                     <h3 class="menu-title">thông tin tài khoản</h3><!-- /.menu-title -->
-
                     <li class="menu-item-has-children dropdown">
-                        <a  style="font-family: 'Roboto Condensed', sans-serif;" href="../user/userlist.php" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Tài Khoản</a>
+                        <a  style="font-family: 'Roboto Condensed', sans-serif;" href="../user/userlist.php" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Tạo Tài Khoản</a>
+                    </li>
+                    <li class="menu-item-has-children dropdown">
+                        <a  style="font-family: 'Roboto Condensed', sans-serif;" href="../user/chitietnhanvien.php" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-tasks"></i>Danh Sách Nhân Viên</a>
                     </li>
 
                 </ul>

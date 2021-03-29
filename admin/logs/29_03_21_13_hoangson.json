@@ -1,0 +1,42 @@
+{
+    "mathue": 16,
+    "tennguoithue": "hoang son",
+    "cmnd": 234546,
+    "dob": "2021-03-12",
+    "quequan": "thanhhoa",
+    "sodienthoai": 123456,
+    "sex": 1,
+    "ngaythue": "2021-03-26",
+    "sophong": 13,
+    "nguoithuecung": [],
+    "dichvu": [
+        {
+            "tenDv": "Khác(rác,gửi xe,..)",
+            "Price": "50000"
+        }
+    ],
+    "debt": [
+        {
+            "date": "03\/2021",
+            "dv1": 1000000,
+            "dv2": 0,
+            "dv3": 560000,
+            "giaphong": 1200,
+            "dien": 8,
+            "nuoc": 45,
+            "khauhao": 400000,
+            "tongtien": 1161253
+        },
+        {
+            "date": "03\/2021",
+            "dv1": 1000000,
+            "dv2": 0,
+            "dv3": 560000,
+            "giaphong": 1200,
+            "dien": 8,
+            "nuoc": 45,
+            "khauhao": 400000,
+            "tongtien": 1161253
+        }
+    ]
+}

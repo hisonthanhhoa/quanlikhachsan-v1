@@ -185,7 +185,7 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
                                     </td>
                                 </tr>
                                 <!-- BAT DAU MODAL -->
-                                <div class="modal fade" id="modal-id<?php echo $key['sophong'] ?>">
+                                <div class="modal fade" id="modal-id<?php echo $key['id'] ?>">
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -222,22 +222,19 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
                                 $chucvu = $_POST['chucvu'];
                                 $luong = $_POST['luong'];
                                 $sodienthoai = $_POST['sodienthoai'];
-                                $room1 = new phong();
-                                $room1->khoitao($giaphong, $trangthai, $mota);
-                                $room1->setSophong($sophong);
-                                $room1->updateRoom($con, $_POST['sophong_old']);
+                                $nhanvien1 = new nhanvien();
+                               
+                                $nhanvien1->updatenhanvien($con, $_POST['sophong_old']);
                                 echo '<script type="text/javascript">
                                                     window.location="./"; 
                                         </script>';
                             }
                             if (isset($_POST['btnDeletenv'])) {
                                 $id = $_POST['id'];
-                                if ($room->getTrangthaibySophong($con, $sophong) == 1) {
-                                    echo '<script>alert("Phòng đang đc thuê ko thể xoá ! Xin Trả Phòng Trước")</script>';
-                                } else {
-                                    $room->deleteRoom($con, $sophong);
-                                    echo '<script>alert("Thành Công");window.location="./";</script>';
-                                }
+                               
+                                    $nhanvien->deletenhanvien($con, $id);
+                                    echo '<script>alert("Thành Công");window.location="./chitietnhanvien.php";</script>';
+                                
                             }
 
                             ?>

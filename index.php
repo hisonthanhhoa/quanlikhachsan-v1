@@ -61,7 +61,7 @@
 
 					</div>
 					<div class="text-center p-t-136">
-						<a class="txt2" href="#">
+						<a class="txt2" href="./nhanvien/">
 							Liên Hệ Ông Chủ Để Được Cấp Tài Khoản
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>

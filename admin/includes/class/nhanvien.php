@@ -72,4 +72,18 @@ class nhanvien
 		}
 		return $arrData;
 	}
+	// UPDATE nhanvien
+	function updatenhanvien($con,$id){
+		$query = "UPDATE nhanvien SET `id`=?,`ten`=?,`chucvu`=?,`luong`=?,`sodienthoai`=?,`tendangnhap`=?,`pass`=? ,`gioitinh`=? WHERE id=?";
+		$stmt = $con->prepare($query);
+		$stmt->bind_param("ississsi",$this->id,$this->ten,$this->chucvu,$this->luong,$this->sodienthoai,$this->tendangnhap,$this->pass,$this->gioitinh, $id);
+		$stmt->execute();
+	}
+	// xoa nhanvien
+	function deletenhanvien($con,$id){
+		$query = "DELETE FROM `nhanvien` WHERE id = ?";
+		$stmt = mysqli_prepare($con,$query);
+		$stmt->bind_param("i",$id);
+		$stmt->execute();
+	}
 }

@@ -1,6 +1,7 @@
 <?php 
+
 	if(isset($_POST['fullname']) && isset($_POST['chucvu'])&& isset($_POST['sodienthoai'])){
-		require('./lib/database.php');
+		require('./../lib/database.php');
 		// get ten,chucvu,sodienthoai 
 		$ten = $_POST['fullname'];
         $chucvu = $_POST['chucvu'];
@@ -12,9 +13,9 @@
 		$stmt->execute();
 		$result = $stmt->get_result();
 		$countRow = mysqli_num_rows($result);
+
 		if($countRow > 0){
-			session_start();
-			$_SESSION[''] = "";
+			
 			echo 1 ;
 		}else{
 			echo 0;

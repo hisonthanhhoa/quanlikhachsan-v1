@@ -193,19 +193,58 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
                                             </div>
                                             <div class="modal-body">
                                                 <form action="#" method="POST" enctype="multipart/form-data">
+                                                  
                                                     <div class="form-group row">
-                                                        <label class="col-sm-2 form-control-label">ID</label>
-                                                        <div class="col-sm-10">
-                                                            <input type="number" class="form-control" name="ten" placeholder="Nhập Tên Mới" name="text" value="<?php echo $key['ten'] ?>">
-                                                            <input type="hidden" class="form-control" name="chucvu" placeholder="Chức Vụ" name="text" value="<?php echo $key['chucvu'] ?>">
-                                                            <input type="hidden" class="form-control" name="luong" placeholder="Lương mới" name="text" value="<?php echo $key['luong'] ?>">
-                                                            <input type="hidden" class="form-control" name="sodienthoai" placeholder="Số Điện Thoại" name="text" value="<?php echo $key['sodienthoai'] ?>">
-                                                            <input type="hidden" class="form-control" name="tendangnhap" placeholder="tendangnhap" name="text" value="<?php echo $key[''] ?>tendangnhap">
-                                                            <input type="hidden" class="form-control" name="pass" placeholder="Pass mới" name="text" value="<?php echo $key['Pass'] ?>">
-                                                            <input type="hidden" class="form-control" name="gioitinh" placeholder="Giới Tính" name="text" value="<?php echo $key['gioitinh'] ?>">
-                                                        </div>
+                                                    <label class="col-sm-2 form-control-label">ID</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="number" class="form-control" name="id_new" placeholder="Nhập id"  name="text" value="<?php echo $key['ID'] ?>">
+                                                        <input type="hidden" class="form-control" name="id_old" placeholder="Nhập id"  name="text" value="<?php echo $key['ID'] ?>">
+                                                        
+
                                                     </div>
-                                                   
+                                            </div>
+                                               <div class="form-group row">
+                                                    <label class="col-sm-2 form-control-label">Tên</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" name="ten" placeholder="Nhập Tên" value="<?php echo $key['ten'] ?>">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 form-control-label">chức vụ</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea name="chucvu" id="chucvu" class="form-control" rows="3"><?php echo $key['chucvu'] ?></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 form-control-label">Lương</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea name="luong" id="luong" class="form-control" rows="3"><?php echo $key['luong'] ?></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 form-control-label">Số Điện Thoại</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea name="sodienthoai" id="sodienthoai" class="form-control" rows="3"><?php echo $key['sodienthoai'] ?></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 form-control-label">Tài Khoản</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea name="taikhoan" id="taikhoan" class="form-control" rows="3"><?php echo $key['taikhoan'] ?></textarea>
+                                                    </div>
+                                                </div>
+                                               
+                                                <div class="form-group row">
+                                                    <label class="col-sm-2 form-control-label">Giới tính</label>
+                                                    <div class="col-sm-10">
+                                                        <select name="gioitinh">
+                                                            <option value="0">Nữ</option>
+                                                            <option value="1">Nam</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                </div>
+
 
                                                     <button type="submit" class="btn btn-primary offset-md-2" name="edinhanvien"><i class="fa fa-edit"></i> Đồng Ý</button>
                                                 </form> <!-- .END FORM -->
@@ -222,12 +261,16 @@ if (isset($_SESSION['username']) && $_SESSION['username'] == "admin") {
                                 $chucvu = $_POST['chucvu'];
                                 $luong = $_POST['luong'];
                                 $sodienthoai = $_POST['sodienthoai'];
+                                $tendangnhap =$_POST['taikhoan'];
+                                $pass =$_POST['pass'];
+                                $gioitinh = $_POST['gioitinh'];
                                 $nhanvien1 = new nhanvien();
                                
-                                $nhanvien1->updatenhanvien($con, $_POST['sophong_old']);
+                                $nhanvien1->updatenhanvien($con, $_POST['id_old']);
                                 echo '<script type="text/javascript">
                                                     window.location="./"; 
                                         </script>';
+                                echo '<script>alert("Thành Công");window.location="./chitietnhanvien.php";</script>';
                             }
                             if (isset($_POST['btnDeletenv'])) {
                                 $id = $_POST['id'];

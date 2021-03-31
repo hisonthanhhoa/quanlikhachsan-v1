@@ -52,13 +52,13 @@ if(isset($_SESSION['username']) && $_SESSION['username']=="admin"){
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
-                        <a href="../index.php"  style="font-family: 'Roboto Condensed', sans-serif;"> <i class="menu-icon fa fa-dashboard"></i>Trung Tâm Quản Lí </a>
+                        <a href="./index.php"  style="font-family: 'Roboto Condensed', sans-serif;"> <i class="menu-icon fa fa-dashboard"></i>Trung Tâm Quản Lí </a>
                     </li>
                     <h3 class="menu-title">Quản lí phòng</h3><!-- /.menu-title -->
                     <li class="menu-item-has-children dropdown">
-                        <a style="font-family: 'Roboto Condensed', sans-serif;" href="./"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop" ></i>Thống Kê Phòng</a>
-                        <a style="font-family: 'Roboto Condensed', sans-serif;" href="taophong.php"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus" ></i>Tạo Phòng</a>
-                        <a style="font-family: 'Roboto Condensed', sans-serif;" href="regRoom.php"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-address-book" ></i>Đăng Ký Phòng</a>
+                        <a style="font-family: 'Roboto Condensed', sans-serif;" href="../room/index.php"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-laptop" ></i>Thống Kê Phòng</a>
+                        <a style="font-family: 'Roboto Condensed', sans-serif;" href="../room/taophong.php"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-plus" ></i>Tạo Phòng</a>
+                        <a style="font-family: 'Roboto Condensed', sans-serif;" href="../room/regRoom.php"  aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-address-book" ></i>Đăng Ký Phòng</a>
                     </li>
 
 
@@ -104,7 +104,7 @@ if(isset($_SESSION['username']) && $_SESSION['username']=="admin"){
                 <div class="col-sm-5">
                     <div class="user-area dropdown float-right">
                         <a href="#"  aria-haspopup="true" aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="../upload/<?php echo $avatar ?>" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="../upload/?php echo $avatar ?>" alt="User Avatar">
                         </a>
                         <br>
                         <a href="../includes/deletesesion.php">Thoát</a>
